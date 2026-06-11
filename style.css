@@ -1,1 +1,243 @@
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --verde-escuro: #2c5e3b;
+    --verde-claro: #4caf50;
+    --bege-claro: #f4f7f4;
+    --texto-escuro: #333333;
+    --branco: #ffffff;
+}
+
+body {
+    color: var(--texto-escuro);
+    background-color: var(--bege-claro);
+    line-height: 1.6;
+}
+
+/* Menu de Navegação */
+header {
+    background-color: var(--branco);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--verde-escuro);
+}
+
+.logo span {
+    color: var(--verde-claro);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--texto-escuro);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--verde-claro);
+}
+
+/* Seção Principal (Hero) */
+.hero {
+    background: linear-gradient(rgba(44, 94, 59, 0.7), rgba(44, 94, 59, 0.7)), 
+                url('https://unsplash.com') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--branco);
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botões */
+.btn-cta {
+    background-color: var(--verde-claro);
+    color: var(--branco);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+    display: inline-block;
+}
+
+.btn-cta:hover {
+    background-color: #388e3c;
+}
+
+.btn-submit {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Seções de Conteúdo Gerais */
+.section-padding {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    color: var(--verde-escuro);
+    margin-bottom: 40px;
+}
+
+/* Grid de Soluções / Práticas */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    border-top: 5px solid var(--verde-claro);
+}
+
+.card h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* Sobre Nós */
+.about-section {
+    background-color: var(--branco);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text h2 {
+    color: var(--verde-escuro); 
+    margin-bottom: 20px; 
+    font-size: 36px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+/* Formulário de Contato */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--branco);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--verde-claro);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+.footer-sub {
+    font-size: 12px; 
+    margin-top: 10px; 
+    color: #bbb;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .nav-menu { 
+        display: none; 
+    } 
+    .hero-content h1 { 
+        font-size: 32px; 
+    }
+    .hero-content p { 
+        font-size: 16px; 
+    }
+}
 
