@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroViva - Agricultura Sustentável</title>
+    <!-- Vinculação com o arquivo CSS separado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navegação -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Agro<span>Viva</span></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#praticas">Práticas</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Hero (Banner Principal) -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Cultivando o Futuro com Consciência</h1>
+            <p>Soluções e tecnologias para um agronegócio produtivo, regenerativo e em harmonia com o meio ambiente.</p>
+            <a href="#praticas" class="btn-cta">Descubra Como</a>
+        </div>
+    </section>
+
+    <!-- Práticas Sustentáveis -->
+    <section id="praticas" class="section-padding">
+        <h2 class="section-title">Nossas Práticas Sustentáveis</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Rotação de Culturas</h3>
+                <p>Alternamos espécies de plantas na mesma área para quebrar ciclos de pragas e melhorar a saúde biológica natural do solo.</p>
+            </div>
+            <div class="card">
+                <h3>Agricultura de Precisão</h3>
+                <p>Uso inteligente de sensores, mapeamento tecnológico e drones para aplicar recursos exatamente onde são necessários, evitando desperdícios.</p>
+            </div>
+            <div class="card">
+                <h3>Bioinsumos</h3>
+                <p>Substituição progressiva de defensivos químicos agressivos por soluções biológicas que protegem a plantação sem agredir o ecossistema.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="about-section">
+        <div class="section-padding about-content">
+            <div class="about-text">
+                <h2>Inovação Alimentando Gerações</h2>
+                <p>A <strong>AgroViva</strong> nasceu da necessidade de equilibrar a alta produtividade do campo com a conservação ambiental. Acreditamos que a terra não é apenas uma ferramenta de produção, mas um ecossistema vivo que deve ser regenerado.</p>
+                <p>Trabalhamos junto a pequenos e grandes produtores fornecendo conhecimento e tecnologia para transformar fazendas tradicionais em modelos de sustentabilidade econômica e ambiental.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section-padding">
+        <h2 class="section-title">Fale Conosco</h2>
+        <div class="contact-form">
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" required placeholder="Seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail Comercial</label>
+                    <input type="email" id="email" required placeholder="seu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Como podemos ajudar sua propriedade?</label>
+                    <textarea id="message" rows="5" required placeholder="Descreva seu projeto ou dúvida..."></textarea>
+                </div>
+                <button type="submit" class="btn-cta btn-submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 AgroViva - Todos os direitos reservados.</p>
+        <p class="footer-sub">Desenvolvido com foco em sustentabilidade e tecnologia.</p>
+    </footer>
+
+</body>
+</html>
 
