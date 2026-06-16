@@ -1,27 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Scroll Suave
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-        });
-    });
+    
+    // --- 1. MENU HAMBÚRGUER RESPONSIVO ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-    // Animação de entrada
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Fecha o menu ao clicar em qualquer link interno
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+    }
+
+    // --- 2. ANIMAÇÃO DE ENTRADA SUAVE (SCROLL ANIMATION) ---
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+    const checkScroll = () => {
+        const triggerBottom = (window.innerHeight / 5) * 4;
+
+        animatedElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+
+            if (elementTop < triggerBottom) {
+                element.classList.add('visible');
             }
         });
-    }, { threshold: 0.1 });
+    };
 
-    // Elementos animados: Cards e o contêiner do Drone
-    document.querySelectorAll('.card, .highlight-image').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(50px)';
-        el.style.transition = 'all 0.8s ease-out';
-        observer.observe(el);
-    });
+    // Executa uma vez no início e depois a cada rolagem
+    window.addEventListener('scroll', checkScroll);
+    checkScroll();
+
+    // --- 3. VALIDAÇÃO E ENVIO DE FORMULÁRIO (SEM CONTEÚDO NO HTML) ---
+    const contatoForm = document.getElementById('form-contato');
+
+    if (contatoForm) {
+        contatoForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Impede o recarregamento da página
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            // Feedback dinâmico e limpo para o usuário
+            alert(`Obrigado pelo contato, ${name}! Nossa equipe comercial responderá em breve no e-mail: ${email}.`);
+            
+            contatoForm.reset(); // Limpa os campos do formulário
+        });
+    }
 });
