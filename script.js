@@ -1,28 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Rolagem suave para os links do menu
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    navLinks.forEach(link => {
+    // Scroll Suave
+    document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            window.scrollTo({
-                top: targetSection.offsetTop - 70, // Ajuste para não esconder o topo atrás do header fixo
-                behavior: 'smooth'
-            });
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
         });
     });
 
-    // 2. Efeito de animação ao rolar a página (Scroll Reveal)
-    const cards = document.querySelectorAll('.card');
-    
-    const observerOptions = {
-        threshold: 0.2
-    };
-
+    // Animação de entrada
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -30,14 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    // Preparar os cards para a animação
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(50px)';
-        card.style.transition = 'all 0.6s ease-out';
-        observer.observe(card);
+    // Elementos animados: Cards e o contêiner do Drone
+    document.querySelectorAll('.card, .highlight-image').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(50px)';
+        el.style.transition = 'all 0.8s ease-out';
+        observer.observe(el);
     });
-
 });
