@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgroViva - Agricultura Sustentável</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,78 +14,100 @@
     <header>
         <div class="nav-container">
             <div class="logo">Agro<span>Viva</span></div>
+            <button class="menu-toggle" aria-label="Abrir menu de navegação">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#praticas">Práticas</a></li>
                     <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#galeria">Inovação</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Cultivando o Futuro com Consciência</h1>
-            <p>Soluções e tecnologias para um agronegócio produtivo, regenerativo e em harmonia com o meio ambiente.</p>
-            <a href="#praticas" class="btn-cta">Descubra Como</a>
-        </div>
-    </section>
-
-    <section id="praticas" class="section-padding">
-        <h2 class="section-title">Nossas Práticas Sustentáveis</h2>
-        <div class="grid-container">
-            <div class="card">
-                <h3>Rotação de Culturas</h3>
-                <p>Alternamos espécies de plantas na mesma área para quebrar ciclos de pragas e melhorar a saúde biológica natural do solo.</p>
+    <main>
+        <section id="inicio" class="hero animate-on-scroll">
+            <div class="hero-content">
+                <h1>Cultivando o Futuro com Consciência</h1>
+                <p>Soluções e tecnologias para um agronegócio produtivo, regenerativo e em harmonia com o meio ambiente.</p>
+                <a href="#praticas" class="btn-cta">Descubra Como</a>
             </div>
-            <div class="card">
-                <h3>Agricultura de Precisão</h3>
-                <p>Uso inteligente de sensores, mapeamento tecnológico e drones para aplicar recursos exatamente onde são necessários.</p>
-            </div>
-            <div class="card">
-                <h3>Bioinsumos</h3>
-                <p>Substituição progressiva de defensivos químicos por soluções biológicas que protegem a plantação.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="sobre" class="about-section">
-        <div class="section-padding about-content">
-            <div class="about-text">
-                <h2>Inovação Alimentando Gerações</h2>
-                <p>A <strong>AgroViva</strong> acredita que a terra é um ecossistema vivo que deve ser regenerado.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding visual-highlight">
-        <div class="highlight-image">
-            <img src="assets/drone.png" alt="Drone operando em tecnologia de precisão">
-        </div>
-    </section>
-
-    <section id="contato" class="section-padding">
-        <h2 class="section-title">Fale Conosco</h2>
-        <div class="contact-form">
-            <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
-                <div class="form-group">
-                    <label for="name">Nome Completo</label>
-                    <input type="text" id="name" required placeholder="Seu nome">
+        <section id="praticas" class="section-padding animate-on-scroll">
+            <h2 class="section-title">Nossas Práticas Sustentáveis</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3>Rotação de Culturas</h3>
+                    <p>Alternamos espécies de plantas na mesma área para quebrar ciclos de pragas e melhorar a saúde biológica natural do solo.</p>
                 </div>
-                <div class="form-group">
-                    <label for="email">E-mail Comercial</label>
-                    <input type="email" id="email" required placeholder="seu@email.com">
+                <div class="card">
+                    <h3>Agricultura de Precisão</h3>
+                    <p>Uso inteligente de sensores, mapeamento tecnológico e drones para aplicar recursos exatamente onde são necessários.</p>
                 </div>
-                <div class="form-group">
-                    <label for="message">Como podemos ajudar?</label>
-                    <textarea id="message" rows="5" required></textarea>
+                <div class="card">
+                    <h3>Bioinsumos</h3>
+                    <p>Substituição progressiva de defensivos químicos por soluções biológicas que protegem a plantação.</p>
                 </div>
-                <button type="submit" class="btn-cta btn-submit">Enviar Mensagem</button>
-            </form>
-        </div>
-    </section>
+            </div>
+        </section>
+
+        <section id="sobre" class="about-section animate-on-scroll">
+            <div class="section-padding about-content">
+                <div class="about-text">
+                    <h2>Inovação Alimentando Gerações</h2>
+                    <p>A <strong>AgroViva</strong> acredita que a terra é um ecossistema vivo que deve ser regenerado continuamente para as próximas gerações.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding visual-highlight animate-on-scroll">
+            <div class="highlight-image">
+                <img src="assets/drone.png" alt="Drone agrícola sobrevoando lavoura em alta definição de tecnologia de precisão">
+            </div>
+        </section>
+
+        <section id="galeria" class="section-padding gallery-section animate-on-scroll">
+            <h2 class="section-title">Tecnologia Aplicada ao Campo</h2>
+            <div class="gallery-container">
+                <div class="gallery-card">
+                    <img src="assets/tecnologia.png" alt="Sensores tecnológicos analisando o crescimento das plantas em tempo real">
+                    <div class="gallery-overlay"><p>Monitoramento Inteligente</p></div>
+                </div>
+                <div class="gallery-card">
+                    <img src="assets/campo.png" alt="Plantação sustentável mostrando manejo correto e solo enriquecido com bioinsumos">
+                    <div class="gallery-overlay"><p>Manejo Regenerativo</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="section-padding animate-on-scroll">
+            <h2 class="section-title">Fale Conosco</h2>
+            <div class="contact-form">
+                <form id="form-contato">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" required placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail Comercial</label>
+                        <input type="email" id="email" required placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Como podemos ajudar?</label>
+                        <textarea id="message" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-cta btn-submit">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 AgroViva - Todos os direitos reservados.</p>
